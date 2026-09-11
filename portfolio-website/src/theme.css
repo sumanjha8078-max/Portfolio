@@ -1,0 +1,58 @@
+/* Mode agnostic colors */
+:root, [data-color="default"] { --color-primary-300: #a5b4fc; --color-primary-400: #818cf8; --color-primary-500: #6366f1; }
+[data-color="cyberpunk"] { --color-primary-300: #f0abfc; --color-primary-400: #e879f9; --color-primary-500: #d946ef; }
+[data-color="emerald"] { --color-primary-300: #6ee7b7; --color-primary-400: #34d399; --color-primary-500: #10b981; }
+[data-color="sunset"] { --color-primary-300: #fdba74; --color-primary-400: #fb923c; --color-primary-500: #f97316; }
+[data-color="space"] { --color-primary-300: #c4b5fd; --color-primary-400: #a78bfa; --color-primary-500: #8b5cf6; }
+[data-color="monochrome"] { --color-primary-300: #d4d4d8; --color-primary-400: #a1a1aa; --color-primary-500: #71717a; }
+[data-color="crimson"] { --color-primary-300: #fda4af; --color-primary-400: #fb7185; --color-primary-500: #f43f5e; }
+[data-color="aurora"] { --color-primary-300: #5eead4; --color-primary-400: #2dd4bf; --color-primary-500: #14b8a6; }
+[data-color="gold"] { --color-primary-300: #fcd34d; --color-primary-400: #fbbf24; --color-primary-500: #f59e0b; }
+[data-color="matrix"] { --color-primary-300: #86efac; --color-primary-400: #4ade80; --color-primary-500: #22c55e; }
+[data-color="ocean"] { --color-primary-300: #67e8f9; --color-primary-400: #22d3ee; --color-primary-500: #06b6d4; }
+
+/* Dark Mode Variables */
+:root, [data-mode="dark"] {
+  --color-text-main: #ffffff;
+  --color-text-muted: #cbd5e1;
+  --color-text-dim: #94a3b8;
+  --color-bg-glass: rgba(255, 255, 255, 0.05);
+  --color-border-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode Backgrounds */
+:root, [data-mode="dark"][data-color="default"] { --color-bg-main: #0a0a0a; }
+[data-mode="dark"][data-color="cyberpunk"] { --color-bg-main: #000000; }
+[data-mode="dark"][data-color="emerald"] { --color-bg-main: #020617; }
+[data-mode="dark"][data-color="sunset"] { --color-bg-main: #171717; }
+[data-mode="dark"][data-color="space"] { --color-bg-main: #0f172a; }
+[data-mode="dark"][data-color="monochrome"] { --color-bg-main: #000000; }
+[data-mode="dark"][data-color="crimson"] { --color-bg-main: #0a0a0a; }
+[data-mode="dark"][data-color="aurora"] { --color-bg-main: #111827; }
+[data-mode="dark"][data-color="gold"] { --color-bg-main: #000000; }
+[data-mode="dark"][data-color="matrix"] { --color-bg-main: #000000; }
+[data-mode="dark"][data-color="ocean"] { --color-bg-main: #083344; }
+
+/* Light Mode Variables */
+[data-mode="light"] {
+  --color-text-main: #0f172a;
+  --color-text-muted: #334155;
+  --color-text-dim: #475569;
+  --color-bg-glass: rgba(255, 255, 255, 0.5);
+  --color-border-glass: rgba(0, 0, 0, 0.05);
+  --color-glass-hover: rgba(255, 255, 255, 0.8);
+}
+
+/* Light Mode Backgrounds */
+[data-mode="light"][data-color="default"] { --color-bg-main: #eef2ff; }
+[data-mode="light"][data-color="cyberpunk"] { --color-bg-main: #fdf4ff; }
+[data-mode="light"][data-color="emerald"] { --color-bg-main: #ecfdf5; }
+[data-mode="light"][data-color="sunset"] { --color-bg-main: #fff7ed; }
+[data-mode="light"][data-color="space"] { --color-bg-main: #f5f3ff; }
+[data-mode="light"][data-color="monochrome"] { --color-bg-main: #f4f4f5; }
+[data-mode="light"][data-color="crimson"] { --color-bg-main: #fff1f2; }
+[data-mode="light"][data-color="aurora"] { --color-bg-main: #f0fdfa; }
+[data-mode="light"][data-color="gold"] { --color-bg-main: #fffbeb; }
+[data-mode="light"][data-color="matrix"] { --color-bg-main: #f0fdf4; }
+[data-mode="light"][data-color="ocean"] { --color-bg-main: #ecfeff; }

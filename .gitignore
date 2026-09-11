@@ -1,0 +1,30 @@
+# LaTeX output and source files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex
+
+# PDFs (Resumes and Research Papers)
+*.pdf
+
+# Private Images (Ignores all images in root, but you can track images inside portfolio-website/public)
+/*.jpeg
+/*.jpg
+/*.png
+/*.webp
+
+# Text files and scripts in root
+/*.txt
+/*.py
+
+# Environment variables
+.env
+.env.local
+.env.*
+
+# Ignore root src folder (if it contains private drafts)
+/src/

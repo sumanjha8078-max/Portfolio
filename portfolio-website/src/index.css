@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@theme {
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-dark: rgba(0, 0, 0, 0.2);
+  
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-bg-main: var(--color-bg-main);
+  
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-dim: var(--color-text-dim);
+  --color-bg-glass: var(--color-bg-glass);
+  --color-border-glass: var(--color-border-glass);
+  --color-glass-hover: var(--color-glass-hover);
+}
+
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg-main text-text-main transition-colors duration-500 antialiased overflow-x-hidden;
+  }
+  .glass {
+    @apply bg-bg-glass backdrop-blur-lg border border-border-glass shadow-lg;
+  }
+  .glass-card {
+    @apply bg-bg-glass backdrop-blur-xl border border-border-glass rounded-2xl shadow-xl duration-300;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  }
+  .glass-card:hover {
+    @apply bg-glass-hover border-border-glass shadow-2xl;
+  }
+  .transition-smooth {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 300ms;
+  }
+}
