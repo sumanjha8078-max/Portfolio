@@ -39,7 +39,7 @@ const Skills = () => {
             transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="glass-card p-6 flex flex-col h-full transition-smooth"
           >
-            <motion.h3 whileHover={{ x: 5 }} className="text-xl font-semibold text-primary-300 mb-4">{category.title}</motion.h3>
+            <motion.h3 whileHover={{ x: 5 }} className="text-xl font-semibold text-primary-500 mb-4">{category.title}</motion.h3>
             <div className="flex flex-wrap gap-2 mt-auto">
               {category.skills.map((skill, sIndex) => (
                 <motion.span 

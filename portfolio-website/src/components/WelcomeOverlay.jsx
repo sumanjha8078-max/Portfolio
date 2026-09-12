@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Orbit, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const WelcomeOverlay = ({ onComplete }) => {
   const [accessGranted, setAccessGranted] = useState(false);
@@ -44,20 +44,23 @@ const WelcomeOverlay = ({ onComplete }) => {
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_bottom,transparent_49%,currentColor_50%,transparent_51%)] bg-[length:100%_40px] text-text-main" />
           
           {/* Top half of the center lock ring */}
-          <div className="absolute -bottom-[1px] w-64 h-32 border-[1px] border-b-0 border-primary-500/50 rounded-t-full bg-bg-main/90 backdrop-blur-md flex items-end justify-center pb-2 z-20">
+          <div className="absolute -bottom-[1px] w-64 h-32 border-[1px] border-b-0 border-text-dim/20 rounded-t-full bg-bg-main/90 backdrop-blur-md overflow-hidden z-20 flex justify-center">
+            {/* Uncolored Circle Boundary */}
+            <div className="absolute -bottom-[48px] w-24 h-24 border-2 border-text-dim/30 rounded-full z-10" />
+            
+            {/* Color spreading from center */}
             <motion.div
-              animate={{ rotate: 180 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute -bottom-[20px] text-primary-500/40"
-            >
-              <Orbit size={180} strokeWidth={0.5} />
-            </motion.div>
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute -bottom-[48px] w-24 h-24 bg-primary-500 rounded-full shadow-[0_0_20px_currentColor] text-primary-500 z-20"
+            />
           </div>
         </motion.div>
 
         {/* Bottom Door */}
         <motion.div
-          className="relative w-full h-1/2 bg-bg-main border-t-[1px] border-primary-500/30 flex items-start justify-center overflow-hidden shadow-2xl z-10"
+          className="relative w-full h-1/2 bg-bg-main border-t-[1px] border-text-dim/20 flex items-start justify-center overflow-hidden shadow-2xl z-10"
           initial={{ y: 0 }}
           animate={{ y: accessGranted ? '100%' : 0 }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
@@ -66,14 +69,17 @@ const WelcomeOverlay = ({ onComplete }) => {
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_bottom,transparent_49%,currentColor_50%,transparent_51%)] bg-[length:100%_40px] text-text-main" />
           
           {/* Bottom half of the center lock ring */}
-          <div className="absolute -top-[1px] w-64 h-32 border-[1px] border-t-0 border-primary-500/50 rounded-b-full bg-bg-main/90 backdrop-blur-md flex items-start justify-center pt-2 z-20">
-             <motion.div
-              animate={{ rotate: -180 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-[20px] text-primary-500/40"
-            >
-              <Orbit size={180} strokeWidth={0.5} />
-            </motion.div>
+          <div className="absolute -top-[1px] w-64 h-32 border-[1px] border-t-0 border-text-dim/20 rounded-b-full bg-bg-main/90 backdrop-blur-md overflow-hidden z-20 flex justify-center">
+            {/* Uncolored Circle Boundary */}
+            <div className="absolute -top-[48px] w-24 h-24 border-2 border-text-dim/30 rounded-full z-10" />
+            
+            {/* Color spreading from center */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute -top-[48px] w-24 h-24 bg-primary-500 rounded-full shadow-[0_0_20px_currentColor] text-primary-500 z-20"
+            />
           </div>
         </motion.div>
 
