@@ -67,7 +67,7 @@ const Navbar = () => {
                   href={link.href}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
+                  className={`px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-150 ${
                     isActive 
                       ? 'bg-primary-500/20 text-primary-500' 
                       : 'text-text-muted hover:text-text-main hover:bg-bg-glass'
@@ -84,7 +84,7 @@ const Navbar = () => {
             
             <a 
               href="#contact" 
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all ml-2 border cursor-pointer ${
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-colors duration-150 ml-2 border cursor-pointer ${
                 activeSection === 'contact'
                   ? 'bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/50'
                   : 'bg-primary-500/90 text-white border-primary-500 hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-500/50'
@@ -125,7 +125,7 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   whileHover={{ scale: 1.02, x: 5 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`text-base font-medium p-3 rounded-xl transition-all ${
+                  className={`text-base font-medium p-3 rounded-xl transition-colors duration-150 ${
                     isActive 
                       ? 'bg-primary-500/20 text-primary-500' 
                       : 'text-text-muted hover:text-text-main hover:bg-bg-glass'
@@ -138,7 +138,7 @@ const Navbar = () => {
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-base font-medium p-3 rounded-xl transition-all text-center border mt-2 cursor-pointer ${
+              className={`text-base font-medium p-3 rounded-xl transition-colors duration-150 text-center border mt-2 cursor-pointer ${
                 activeSection === 'contact'
                   ? 'bg-primary-500 text-white border-primary-500'
                   : 'bg-primary-500/90 text-white border-primary-500 hover:bg-primary-500'

@@ -14,8 +14,19 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
+    // Delay typing until the welcome overlay doors have opened (auth 1500ms + door half-open ~700ms = 2200ms)
+    const delayTimer = setTimeout(() => {
+      setStartTyping(true);
+    }, 2200);
+    return () => clearTimeout(delayTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!startTyping) return;
+
     let ticker = setTimeout(() => {
       let i = loopNum % titles.length;
       let fullText = titles[i];
@@ -39,7 +50,7 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(ticker);
-  }, [text, isDeleting, loopNum, typingSpeed]);
+  }, [text, isDeleting, loopNum, typingSpeed, startTyping]);
 
   return (
     <section id="home" className="min-h-[85vh] flex items-center justify-center pt-20">
